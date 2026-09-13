@@ -220,7 +220,15 @@ def two_list(vals, counts):
     >>> c
     Link(1, Link(1, Link(3, Link(3, Link(2)))))
     """
-    "*** YOUR CODE HERE ***"
+    result = Link.empty
+    i = len(vals) - 1
+    while i >= 0:
+        j = counts[i] - 1
+        while j >= 0:
+            result = Link(vals[i], result)
+            j -= 1
+        i -= 1
+    return result
 
 
 class Link:
